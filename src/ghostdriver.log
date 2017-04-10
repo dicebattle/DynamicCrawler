@@ -1,0 +1,27 @@
+[INFO  - 2017-03-26T15:12:25.850Z] GhostDriver - Main - running on port 42723
+[INFO  - 2017-03-26T15:12:26.435Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-03-26T15:12:26.435Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.customHeaders:  - {}
+[INFO  - 2017-03-26T15:12:26.435Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"linux-unknown-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-03-26T15:12:26.435Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9f10ecf0-1236-11e7-b7b5-d76de2787db7
+[ERROR - 2017-03-26T15:12:36.064Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.onError - msg: TypeError: undefined is not an object (evaluating 'data[0].share_count')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-03-26T15:12:36.064Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.onError - stack:
+  success (http://news.chosun.com/partners/js/partners_art_scripts_201601.js:496)
+  c (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:3)
+  fireWith (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:3)
+  k (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:5)
+  onreadystatechange (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:5)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-03-26T15:12:36.865Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.onError - msg: TypeError: undefined is not an object (evaluating 'data[0].share_count')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-03-26T15:12:36.865Z] Session [9f10ecf0-1236-11e7-b7b5-d76de2787db7] - page.onError - stack:
+  success (http://news.chosun.com/partners/js/partners_art_scripts_201601.js:496)
+  c (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:3)
+  fireWith (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:3)
+  k (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:5)
+  onreadystatechange (http://news.chosun.com/dhtm/js/jquery-1.9.1.min.js:5)
+
+  phantomjs://platform/console++.js:263 in error
