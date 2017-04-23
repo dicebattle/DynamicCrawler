@@ -90,3 +90,59 @@ list와 관련된 커멘드이다.
 	* int list는 drop을 동시에 여러개 하는것과 같은 결과를 보인다.
 		* 주의) `[1,2,3,4]`에서 `1,2,3` 을 빼고 싶을땐 `"$drop":[0,0,0]` 이 아니라 `"$drop":[0,1,2]`이다.
 
+### boolean task command
+
+* **`$or`**
+    * 입력은 암묵적 list이다.
+    * list안에 있는 모든 Task/Value에 대해서 or를 순차적으로 비교한다.
+	* short circuit으로 처리된다. 순차적으로 비교하다 True인 값이 있으면 그 즉시 해당 값을 리턴한다.
+	* Array에 있는 모든 값이 False라면 False를 리턴한다.
+
+* **`$and`**
+	* 입력은 암묵적 list이다.
+    * list안에 있는 모든 Task/Value에 대해서 and를 순차적으로 비교한다.
+	* short circuit으로 처리된다. 순차적으로 비교하다 False 값이 있으면 그 즉시 False를 리턴한다.
+	* Array에 있는 모든 값이 True라면, 값들의 리스트를 리턴한다.
+    
+* 예)
+	* `["$or", False, None, "Some_Value", None]` => `"Some_Value"`
+	* `["$or", False, None, False, None]` => `False`
+	* `["$and", "Some_Value1", "Some_Value2", "Some_Value3", "Some_Value4"]` => `["Some_Value1", "Some_Value2", "Some_Value3", "Some_Value4"]`
+	* `["$and", "Some_Value1", "Some_Value2", "Some_Value3", None]` => `False`
+
+
+
+### operator command
+다음음 python에서 사용되는 operator를 그대로 표현한것이다.
+결과값을 `input` <operator> `option` 으로 계산된다.
+* **`$+`**
+* **`$/`**
+* **`$-`**
+* **`$*`**
+* **`$%`**
+* **`$is`**
+* **`$in`**
+* **`$is_not`**
+* **`$==`**
+* **`$!=`**
+* **`$>`**
+* **`$>=`**
+* **`$<`**
+* **`$<=`**
+
+### string command
+* **`$concat`**
+	* 암묵적 list를 option으로 받는다.
+	* 입력받은 string list를 합쳐 하나의 스트링으로 만든다.
+	* input을 포함해서 합치고 싶다면 반드시 $self를 사용하라.
+* **`$mk_string`**
+	* input은 String list 이고, Option은 String이다.
+	* String list를 합치는데, 이때 Option으로 받은 String 을 구분자로 넣는다.
+* **`$replace`**
+	* input은 String이고 Option은 replace Option으로, 암묵적인 dict이다.
+	* option에 사용되는 key는 "$find", "$find_regex", "$to" find에는 찾을 string, to에는 바꿀 string, 을 넣으면 되고, find 대신에 find_regex를 넣어 변경할 수 있다.
+* **`$replace_once`** : replace 는 다 바꾸는거 이건 최초 매칭만 바꾸는거
+* **`$format`**
+	* format은 String을 generagte할 때 새용한다.
+	* input은 $self를 이용해 사용 할 수 있다.
+	* Option에는 $format 과 $args 가 있는데 format은 String으로, printf의 그 포맷으로 맞추면 된다. args는 암묵적 list인데, value로서 list를 넘겨도 된다.
