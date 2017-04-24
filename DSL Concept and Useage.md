@@ -142,7 +142,3 @@ list와 관련된 커멘드이다.
 	* input은 String이고 Option은 replace Option으로, 암묵적인 dict이다.
 	* option에 사용되는 key는 "$find", "$find_regex", "$to" find에는 찾을 string, to에는 바꿀 string, 을 넣으면 되고, find 대신에 find_regex를 넣어 변경할 수 있다.
 * **`$replace_once`** : replace 는 다 바꾸는거 이건 최초 매칭만 바꾸는거
-* **`$format`**
-	* format은 String을 generagte할 때 새용한다.
-	* input은 $self를 이용해 사용 할 수 있다.
-	* Option에는 $format 과 $args 가 있는데 format은 String으로, printf의 그 포맷으로 맞추면 된다. args는 암묵적 list인데, value로서 list를 넘겨도 된다.
