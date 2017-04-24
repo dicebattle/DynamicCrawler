@@ -1,7 +1,6 @@
 import numbers
 
 from task.task import Task
-from task.task_array import TaskArray
 
 
 def parse_object(value):
@@ -30,6 +29,7 @@ def parse_dict(dict_val: dict):
 
 def parse_list(list_val):
     import src.commands as cmd
+    from task.task_array import TaskArray
     if len(list_val) == 0:
         return None
     if isinstance(list_val[0], str) and list_val[0].startswith("$"):

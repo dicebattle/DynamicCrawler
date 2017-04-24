@@ -1,14 +1,6 @@
-<<<<<<< HEAD
 from context.abstract_context import RuntimeContext
 from task.task import Task
 from task.task_builder import parse_object
-=======
-from crawling.classes.genericparser.runtimecontext.abstract_context import RuntimeContext
-from crawling.classes.genericparser.task import Task
-from crawling.classes.genericparser.task_builder import parse_object
-
-__author__ = 'Glenn'
->>>>>>> master
 
 
 class CommonTask(Task):
@@ -17,12 +9,6 @@ class CommonTask(Task):
         self.command = command
 
     def execute(self, context: RuntimeContext, input_value, result_set: dict):
-<<<<<<< HEAD
-        pass
-
-    def get_value(self, context, input_value, result_set):
-        pass
-=======
         if self.command == "$use":
             value = self.get_value(context, input_value, result_set)
             return value
@@ -45,7 +31,6 @@ class CommonTask(Task):
             return input_value
         else:
             return self.get_option_val(context, input_value, result_set)
->>>>>>> master
 
     @classmethod
     def get_task(cls, command: str, option):
