@@ -6,9 +6,12 @@ from commands.common_task import CommonTask
 from commands.concat_string_task import ConcatStringTask
 from commands.drop_task import DropTask
 from commands.filter_task import FilterTask
+from commands.format_string_task import FormatStringTask
 from commands.get_attr_task import GetAttrTask
+from commands.get_result_task import GetResultTask
 from commands.get_task import GetTask
 from commands.http_task import HttpTask
+from commands.literal_task import LiteralTask
 from commands.map_task import MapTask
 from commands.mk_string_task import MkStringTask
 from commands.operator_task import OperatorTask
@@ -70,8 +73,13 @@ __COMMAND_PRIORITY = [
     "$mk_string",
     "$replace",
     "$replace_once",
+    "$format",
 
+    "$literal",
+    "$literal_rec",
     "$get_attr",
+
+    "$self",
 ]
 
 __COMMAND_PRIORITY_DICT = dict(map(lambda x: (x[1], x[0]), enumerate(__COMMAND_PRIORITY)))
@@ -131,8 +139,13 @@ __TASK_GENERATOR = {
     "$mk_string": MkStringTask.get_task,
     "$replace": ReplaceStringTask.get_task,
     "$replace_once": ReplaceStringTask.get_task,
+    "$format": FormatStringTask.get_task,
+
+    "$literal": LiteralTask.get_task,
+    "$literal_rec": LiteralTask.get_task,
 
     "$get_attr": GetAttrTask.get_task,
+    "$self": GetResultTask.get_task,
 }
 
 
