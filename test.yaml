@@ -3,34 +3,26 @@
   "$http":
     "$url": "$$inp_url"
 - - "$command": "$find"
-    "$tag": table
+    "$tag": ul
     "$attr":
-      class: board_notice
-  - "$select": tr a
-  - "$command": "$map"
-    "$get": href
-- "$map":
-  - "$command": "$soup"
-    "$http":
-      "$url": "$self"
-      "$join_with": "$$inp_url"
-  - "$select": ".notice_view tr"
-  - "$command": "$literal"
-    title:
-    - "$get": 0
-    - "$select": td strong
-    author:
-    - "$get": 1
-    - "$select": span
-    - "$get": 0
-    - "$get_attr": contents
-    - "$get": 2
-    pub_date:
-    - "$get": 1
-    - "$select": span
-    - "$get": 1
-    - "$get_attr": contents
-    - "$get": 2
-    body:
-    - "$get": 2
+      class: type01
+  - "$select": li dl
+  - "$map":
+    - "$command": "$literal"
+      title:
+      - "$select": dt a
+      - "$get": 0
+      - "$get": title
+      url:
+      - "$select": dt a
+      - "$get": 0
+      - "$get": href
+      naver_url:
+      - "$select": dd a
+      - "$get": 0
+      - "$get": href
+      press:
+      - "$select": dd span._sp_each_source
+      - "$get": 0
+      - "$get_attr": text
 - "$as": result

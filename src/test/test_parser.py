@@ -15,7 +15,7 @@ class DummyTask(Task):
 
 
 def test_task():
-    url = "http://mma.go.kr/suwon/board/boardList.do?mc=usr0000096&gesipan_id=31"
+    url = "https://search.naver.com/search.naver?sm=tab_hty.top&where=news&oquery=%ED%85%8C%EC%8A%A4%ED%8A%B8&ie=utf8&query=%EB%AC%B8%EC%9E%AC%EC%9D%B8"
     res_set = {
         "inp_url": url
     }
