@@ -1,2 +1,14 @@
 
 \.idea/
+
+src/__pycache__/
+
+src/commands/__pycache__/
+
+src/context/__pycache__/
+
+src/queue/__pycache__/
+
+src/task/__pycache__/
+
+\.cache/v/cache/

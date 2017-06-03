@@ -4,9 +4,13 @@ def article_extract():
     # url = "http://www.hankyung.com/news/app/newsview.php?aid=2017051936061"
     url = "http://news.joins.com/article/21587110"
     a = Article(url, language='ko')
+    print(a)
     a.download()
+    print(a)
     a.parse()
+    print(a)
     a.nlp()
+    print(a)
     res_set = {
         "input_article_url": url
     }
@@ -18,6 +22,7 @@ def article_extract():
     # res_set.quotes = str(re.findall(u'(?:\u201c(.*?)\u201d)', a.text))
     # return res_set
 
+    print(a)
     print("제목: " + a.title)
     print("작성자: " + str(a.authors))
     print("일시: " + str(a.publish_date))
