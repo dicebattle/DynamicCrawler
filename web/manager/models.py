@@ -76,7 +76,20 @@ class Taskchain(models.Model):
     chain = models.TextField()
     created_at = models.DateTimeField()
     last_used_at = models.DateTimeField()
+    example_url = models.CharField(max_length=500, blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'TaskChain'
+
+
+class Work(models.Model):
+    taskchain_id = models.IntegerField()
+    celebrity_id = models.IntegerField()
+    known_article_count = models.IntegerField()
+    parsed_article_count = models.IntegerField()
+    analysed_article_count = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'Work'
